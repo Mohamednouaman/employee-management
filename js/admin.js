@@ -148,13 +148,13 @@ let getEmployees = async (url) => {
  }
  
 
-getEmployees("http://localhost:8080/api/helper/users/loadAll");
+getEmployees("https://mapphelper.herokuapp.com/api/helper/users/loadAll");
 
  async function approveEmployee(r){
     r.disabled=true;
     r.innerText="In progress...";
     let employeeId = r.parentNode.parentNode.firstChild.innerText;
-     let url="http://localhost:8080/api/helper/approveEmployee/"+employeeId
+     let url="https://mapphelper.herokuapp.com/api/helper/approveEmployee/"+employeeId
       let response=await fetch(url);
      if(response.ok==true){
 
@@ -167,7 +167,7 @@ getEmployees("http://localhost:8080/api/helper/users/loadAll");
  async function removeEmployee(r){
     let employeeId = r.parentNode.parentNode.firstChild.innerText;
     let rowIndex= r.parentNode.parentNode.rowIndex
-    let url="http://localhost:8080/api/helper/removeUser/"+employeeId
+    let url="https://mapphelper.herokuapp.com/api/helper/removeUser/"+employeeId
     document.getElementsByTagName("table")[0].deleteRow(rowIndex);
      let response=await fetch(url);
     if(response.ok==true){

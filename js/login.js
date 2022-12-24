@@ -19,7 +19,7 @@ if(validateData(dataForm)){
 }else{
   errorContainer.style.display="none";
   btn.disabled=true;
-  let url="http://localhost:8080/api/helper/users/"+dataForm[0];
+  let url="https://mapphelper.herokuapp.com/api/helper/users/"+dataForm[0];
   loadDataFromServer(url)
 }
 
